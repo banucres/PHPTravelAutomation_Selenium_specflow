@@ -5,13 +5,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTalk.SpecFlow;
 
 namespace PHPTravelAutomation.Base
 {
     public class Base
     {
         public IWebDriver _driver { get; set; }
-        public BasePage CurrentPage { get; set; }
+        public BasePage CurrentPage
+        {
+            get
+            {
+                return (BasePage)ScenarioContext.Current["currentPage"];
+            }
+            set
+            {
+                ScenarioContext.Current["currentPage"] = value;
+            }
+        }
         protected TPage GetInstance<TPage>() where TPage : BasePage, new()
         {
             TPage pageInstance = new TPage()

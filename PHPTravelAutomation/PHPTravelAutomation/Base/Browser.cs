@@ -17,6 +17,7 @@ namespace PHPTravelAutomation.Base
         }
 
         public BrowserType Type { get; set; }
+
         public void GoToUrl(string url)
         {
             DriverContext.Driver.Url = url;

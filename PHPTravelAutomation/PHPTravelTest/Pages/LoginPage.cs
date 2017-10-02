@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using PHPTravelAutomation.Base;
+using PHPTravelAutomation.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,8 +27,13 @@ namespace PHPTravelTest.Pages
         {
            txtUserName.SendKeys(userName);
            txtPassword.SendKeys(password);
+         
            
-           
+        }
+
+        public void CheckIfLoginExist()
+        {
+            buttonLogin.AssertElementPresent();
         }
 
         public AccountPage ClickLogin()

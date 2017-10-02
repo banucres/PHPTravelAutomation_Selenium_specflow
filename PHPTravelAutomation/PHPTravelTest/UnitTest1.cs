@@ -16,53 +16,32 @@ namespace PHPTravelTest
     public class UnitTest1:Base
     {
 
-        public void OpenBrowser(BrowserType browserType)
-        {
-            switch (browserType)
-            {
-                case BrowserType.InternetExplorer:
-                    DriverContext.Driver = new InternetExplorerDriver();
-                    DriverContext.Browser = new Browser(DriverContext.Driver);
-                    break;
-                case BrowserType.Chrome:
-                    DriverContext.Driver = new ChromeDriver();
-                    DriverContext.Browser = new Browser(DriverContext.Driver);
-                    break;
-                case BrowserType.FireFox:
-                    DriverContext.Driver = new FirefoxDriver();
-                    DriverContext.Browser = new Browser(DriverContext.Driver);
-                    break;
-                default:
-                    DriverContext.Driver = new ChromeDriver();
-                    DriverContext.Browser = new Browser(DriverContext.Driver);
-                    break;
-            }
-        }
+        
         string url = ConfigReader.InitializeTest();
 
         
 
-        [TestMethod]
-        public void TestMethod1()
-        {
+        //[TestMethod]
+        //public void TestMethod1()
+        //{
            
 
-            string fileName = Environment.CurrentDirectory.ToString() + "\\Data\\Login.xlsx";
-            ExcelHelper.PopulateInCollection(fileName);
-            LogHelper.CreateLogFile();
+        //    string fileName = Environment.CurrentDirectory.ToString() + "\\Data\\Login.xlsx";
+        //    ExcelHelper.PopulateInCollection(fileName);
+        //    LogHelper.CreateLogFile();
 
-            OpenBrowser(BrowserType.Chrome);
-            DriverContext.Browser.GoToUrl(url);
-            LogHelper.Write("Opened the browser !!!");
+        //    //OpenBrowser(BrowserType.Chrome);
+        //    DriverContext.Browser.GoToUrl(url);
+        //    LogHelper.Write("Opened the browser !!!");
 
-            CurrentPage = GetInstance<LoginPage>();
-            //CurrentPage.As<LoginPage>().Login("user@phptravels.com", "demouser");
-            CurrentPage.As<LoginPage>().Login(ExcelHelper.ReadData(2, "Column0"), ExcelHelper.ReadData(2, "Column1"));
-            CurrentPage =CurrentPage.As<LoginPage>().ClickLogin();
-            CurrentPage=CurrentPage.As<AccountPage>().ClickAccountMyProfilePage();
-            CurrentPage.As<AccountMyProfilePage>().UpdateProfile("R3, Avenue du Maroc", "R2, Avenue du Maroc");
+        //    CurrentPage = GetInstance<LoginPage>();
+        //    //CurrentPage.As<LoginPage>().Login("user@phptravels.com", "demouser");
+        //    CurrentPage.As<LoginPage>().Login(ExcelHelper.ReadData(2, "Column0"), ExcelHelper.ReadData(2, "Column1"));
+        //    CurrentPage =CurrentPage.As<LoginPage>().ClickLogin();
+        //    CurrentPage=CurrentPage.As<AccountPage>().ClickAccountMyProfilePage();
+        //    CurrentPage.As<AccountMyProfilePage>().UpdateProfile("R3, Avenue du Maroc", "R2, Avenue du Maroc");
 
-        }
+        //}
 
         
     }
