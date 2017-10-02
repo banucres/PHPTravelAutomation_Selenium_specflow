@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace PHPTravelTest.Pages
 {
-    internal class AccountPage:BasePage
+    public class AccountPage:BasePage
     {
         [FindsBy(How = How.LinkText, Using = "Bookings")]
         public IWebElement LnkBooking { get; set; }

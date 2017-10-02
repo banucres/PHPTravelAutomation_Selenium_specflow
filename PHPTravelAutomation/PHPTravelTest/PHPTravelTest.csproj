@@ -95,13 +95,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\ProfileUpdate.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProfileUpdate.feature</DependentUpon>
+    </Compile>
     <Compile Include="Hooks\HookInitialize.cs" />
     <Compile Include="Pages\Account\AccountPage.cs" />
     <Compile Include="Pages\Account\AccountBookingsPage.cs" />
     <Compile Include="Pages\Account\AccountMyProfilePage.cs" />
     <Compile Include="Pages\Account\AccountWishlist.cs" />
     <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="step\ExtendedSteps.cs" />
     <Compile Include="step\LoginSteps.cs" />
+    <Compile Include="step\ProfileUpdateSteps.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -115,6 +122,10 @@
     <None Include="Features\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ProfileUpdate.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProfileUpdate.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

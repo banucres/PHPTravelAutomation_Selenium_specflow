@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PHPTravelTest.Pages.Account
 {
-    class AccountBookingsPage:BasePage
+    public class AccountBookingsPage:BasePage
     {
 
     }

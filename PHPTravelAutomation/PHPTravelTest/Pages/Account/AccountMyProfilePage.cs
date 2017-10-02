@@ -23,16 +23,24 @@ namespace PHPTravelTest.Pages.Account
         [FindsBy(How = How.LinkText, Using = "Wishlist")]
         IWebElement lnkWishlist { get; set; }
 
-        public void UpdateProfile(string address1,string address2)
+
+        public void ClearExistingTextDetails()
         {
             txtaddress1.Clear();
-            txtaddress1.SendKeys(address1);
             txtaddress2.Clear();
+
+        }
+        public void UpdateProfiledetails(string address1,string address2)
+        {
+            txtaddress1.SendKeys(address1);
             txtaddress2.SendKeys(address2);
-            btnProfilesubmit.Click();
-            
+            //btnProfilesubmit.Click();            
         }
 
-
+        public AccountPage SubmitProfileButton()
+        {
+            btnProfilesubmit.Submit();
+            return GetInstance<AccountPage>();
+        }
     }
 }
